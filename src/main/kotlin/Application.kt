@@ -1,7 +1,6 @@
 package me.samoylenko.examples.vulnerable
 
 import io.ktor.application.*
-import io.ktor.http.*
 import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.thymeleaf.*
@@ -19,7 +18,7 @@ fun Application.module() {
 
         route("/hello") {
             get {
-                call.respondText("Hello, ${call.request.queryParameters["name"]}", ContentType.Text.Html)
+                call.respond("Hello, ${call.request.queryParameters["name"]}")
             }
         }
 
